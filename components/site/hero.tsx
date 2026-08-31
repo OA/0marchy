@@ -2,7 +2,7 @@ import { hero, site } from "@/content"
 import { InstallCommand } from "@/components/site/install-command"
 import { PillButtons } from "@/components/site/pill-buttons"
 import { Reveal } from "@/components/site/reveal"
-import { Wordmark } from "@/components/site/wordmark"
+import { WordmarkArt } from "@/components/site/wordmark"
 
 export function Hero() {
   return (
@@ -15,14 +15,11 @@ export function Hero() {
           <h1 className="sr-only">
             {site.name} — {hero.title}
           </h1>
-          <Wordmark
-            aria-hidden="true"
-            className="text-[clamp(2.5rem,10vw,6.5rem)]"
-          />
+          <WordmarkArt />
         </Reveal>
 
         <Reveal delay={60}>
-          <p className="mt-7 font-mono text-base text-balance sm:mt-9 sm:text-xl">
+          <p className="mt-8 font-mono text-base font-light text-balance sm:mt-10 sm:text-xl">
             {hero.title}
           </p>
         </Reveal>

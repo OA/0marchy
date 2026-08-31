@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-10 sm:grid-cols-[1.5fr_1fr_1fr]">
           <div>
-            <Wordmark className="text-2xl" />
+            <Wordmark className="text-base" />
             <p className="text-muted-foreground mt-3 max-w-xs text-sm">
               {site.tagline}
             </p>

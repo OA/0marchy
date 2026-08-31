@@ -49,7 +49,7 @@ export function SiteNav() {
           href="#top"
           className="focus-visible:ring-ring rounded-sm focus-visible:ring-2 focus-visible:outline-none"
         >
-          <Wordmark className="text-xl sm:text-2xl" />
+          <Wordmark className="text-base sm:text-lg" />
           <span className="sr-only">{site.name} home</span>
         </a>
 

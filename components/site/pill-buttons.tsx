@@ -56,9 +56,12 @@ export function PillButtons() {
               <TooltipTrigger asChild>
                 <button
                   type="button"
-                  className="border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground focus-visible:ring-ring inline-flex h-10 cursor-default items-center gap-2 rounded-md border px-3.5 font-mono text-xs font-bold tracking-wide uppercase transition-colors focus-visible:ring-2 focus-visible:outline-none sm:px-4 sm:text-sm"
+                  // Matches the original's `.button`: solid accent fill, dark
+                  // text, 0.4em radius, a soft drop shadow, 1.4em icons and a
+                  // 0.6em gap. The one difference is the accent colour.
+                  className="bg-primary text-primary-foreground shadow-primary/20 hover:bg-primary/85 focus-visible:ring-ring focus-visible:ring-offset-background inline-flex h-[2.9em] cursor-default items-center gap-[0.6em] rounded-[0.4em] px-[1em] font-mono text-sm font-bold uppercase shadow-[0_0.2em_1.2em_-0.4em_rgba(0,0,0,0.5)] transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none sm:text-base"
                 >
-                  <Icon aria-hidden="true" className="size-4" />
+                  <Icon aria-hidden="true" className="size-[1.4em]" />
                   {b.label}
                 </button>
               </TooltipTrigger>
