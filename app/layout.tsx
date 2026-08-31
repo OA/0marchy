@@ -73,14 +73,6 @@ export default function RootLayout({
       className={cn("dark antialiased", fontMono.variable, fontPixel.variable)}
       suppressHydrationWarning
     >
-      <head>
-        {/* Revealed elements start transparent and are shown by an
-            IntersectionObserver. With scripting off nothing would ever run, so
-            show everything up front instead. */}
-        <noscript>
-          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
-        </noscript>
-      </head>
       <body className="font-mono">
         <TooltipProvider delayDuration={150}>{children}</TooltipProvider>
       </body>

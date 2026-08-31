@@ -1,5 +1,4 @@
 import { testimonials } from "@/content"
-import { Reveal } from "@/components/site/reveal"
 import { Section } from "@/components/site/section"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 
@@ -11,8 +10,8 @@ export function Testimonials() {
       subheading={testimonials.subheading}
     >
       <ul className="grid gap-4 md:grid-cols-3">
-        {testimonials.items.map((t, i) => (
-          <Reveal as="li" key={t.handle} delay={i * 70}>
+        {testimonials.items.map((t) => (
+          <li  key={t.handle}>
             <Card className="border-border/60 bg-card/50 h-full justify-between gap-6">
               <CardContent>
                 <blockquote className="text-foreground/90 text-sm leading-relaxed text-pretty">
@@ -31,16 +30,16 @@ export function Testimonials() {
                 <p className="text-muted-foreground mt-1 text-xs">{t.role}</p>
               </CardFooter>
             </Card>
-          </Reveal>
+          </li>
         ))}
       </ul>
 
-      <Reveal className="mt-8">
+      <div className="mt-8">
         <p className="text-muted-foreground/80 text-xs">
           These people do not exist. The names, handles, roles and quotations
           are invented for the parody.
         </p>
-      </Reveal>
+      </div>
     </Section>
   )
 }

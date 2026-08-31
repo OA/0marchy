@@ -71,6 +71,5 @@ wordmark, and a single toxic-green accent. The layout deliberately mirrors the
 shape of a modern distro landing page — that resemblance is the joke, and the
 footer says so in as many words.
 
-Animation is one fade-and-rise on scroll, driven by a single
-`IntersectionObserver` per element with no animation library, and switched off
-entirely under `prefers-reduced-motion`.
+There are no scroll animations. Content is present on load; the only motion is
+a colour transition on hover.

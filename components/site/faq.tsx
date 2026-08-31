@@ -1,5 +1,4 @@
 import { faq } from "@/content"
-import { Reveal } from "@/components/site/reveal"
 import { Section } from "@/components/site/section"
 import {
   Accordion,
@@ -11,7 +10,7 @@ import {
 export function Faq() {
   return (
     <Section id="faq" heading={faq.heading}>
-      <Reveal>
+      <div>
         <Accordion type="single" collapsible className="w-full">
           {faq.items.map((item, i) => (
             <AccordionItem key={item.q} value={`item-${i}`}>
@@ -24,7 +23,7 @@ export function Faq() {
             </AccordionItem>
           ))}
         </Accordion>
-      </Reveal>
+      </div>
     </Section>
   )
 }

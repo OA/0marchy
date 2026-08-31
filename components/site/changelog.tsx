@@ -1,5 +1,4 @@
 import { changelog } from "@/content"
-import { Reveal } from "@/components/site/reveal"
 import { Section } from "@/components/site/section"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -13,7 +12,7 @@ export function Changelog() {
     >
       <ol className="space-y-10">
         {changelog.entries.map((e, i) => (
-          <Reveal as="li" key={e.version} delay={i === 0 ? 0 : 40}>
+          <li  key={e.version}>
             <article className="grid gap-4 sm:grid-cols-[10rem_1fr] sm:gap-8">
               <header className="flex flex-row items-baseline gap-3 sm:flex-col sm:items-start sm:gap-2">
                 <h3 className="text-primary font-mono text-lg font-semibold">
@@ -56,18 +55,18 @@ export function Changelog() {
             {i < changelog.entries.length - 1 ? (
               <Separator className="bg-border/40 mt-10" />
             ) : null}
-          </Reveal>
+          </li>
         ))}
       </ol>
 
-      <Reveal className="mt-12">
+      <div className="mt-12">
         <p className="text-muted-foreground/80 text-xs">
           Version numbers, dates and identifiers on this page are invented. The{" "}
           <code className="font-mono">XXXX</code> in each identifier is a
           literal placeholder — no real advisory is referenced anywhere on this
           site.
         </p>
-      </Reveal>
+      </div>
     </Section>
   )
 }

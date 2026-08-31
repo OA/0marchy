@@ -1,7 +1,6 @@
 import { hero, site } from "@/content"
 import { InstallCommand } from "@/components/site/install-command"
 import { PillButtons } from "@/components/site/pill-buttons"
-import { Reveal } from "@/components/site/reveal"
 import { WordmarkArt } from "@/components/site/wordmark"
 
 export function Hero() {
@@ -11,40 +10,40 @@ export function Hero() {
       className="px-5 pt-14 pb-16 text-center sm:px-8 sm:pt-20 sm:pb-24"
     >
       <div className="mx-auto w-full max-w-5xl">
-        <Reveal>
+        <div>
           <h1 className="sr-only">
             {site.name} — {hero.title}
           </h1>
           <WordmarkArt />
-        </Reveal>
+        </div>
 
-        <Reveal delay={60}>
+        <div>
           <p className="mt-8 font-mono text-base font-light text-balance sm:mt-10 sm:text-xl">
             {hero.title}
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={100}>
+        <div>
           <p className="text-muted-foreground mx-auto mt-4 max-w-2xl font-mono text-sm italic text-pretty sm:text-base">
             {hero.flavour}
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={140}>
+        <div>
           <p className="text-foreground/90 mx-auto mt-5 max-w-2xl font-mono text-sm text-pretty sm:text-base">
             {hero.subhead}
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={200} className="mt-10 sm:mt-12">
+        <div  className="mt-10 sm:mt-12">
           <PillButtons />
-        </Reveal>
+        </div>
 
-        <Reveal delay={240} className="mx-auto mt-12 max-w-2xl sm:mt-14" id="install">
+        <div  className="mx-auto mt-12 max-w-2xl sm:mt-14" id="install">
           <InstallCommand />
-        </Reveal>
+        </div>
 
-        <Reveal delay={280}>
+        <div>
           <dl className="border-border/70 mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-md border sm:mt-16 lg:grid-cols-4">
             {hero.stats.map((s) => (
               <div
@@ -60,7 +59,7 @@ export function Hero() {
               </div>
             ))}
           </dl>
-        </Reveal>
+        </div>
       </div>
     </section>
   )
