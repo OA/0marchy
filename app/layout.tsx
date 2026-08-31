@@ -37,6 +37,12 @@ export const metadata: Metadata = {
     "security parody",
   ],
   alternates: { canonical: "/" },
+  // `app/opengraph-image.png` supplies the card automatically, including its
+  // dimensions and a hashed URL. It is a *static* PNG rather than a generated
+  // route on purpose: under `output: "export"` a generated route is written to
+  // an extensionless file, which hosts then serve as
+  // `application/octet-stream`, and several social crawlers refuse to render
+  // that. The generator lives in `scripts/og-image.tsx`; see the README.
   openGraph: {
     type: "website",
     url: site.url,

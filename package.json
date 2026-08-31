@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "og": "cp scripts/og-image.tsx app/opengraph-image.tsx && next build && cp out/opengraph-image app/opengraph-image.png && rm app/opengraph-image.tsx && next build && echo 'app/opengraph-image.png regenerated'"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

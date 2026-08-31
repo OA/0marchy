@@ -41,10 +41,28 @@ code, and the install command must never resolve.
 |---|---|
 | `content.ts` | every word on the site |
 | `app/layout.tsx` | metadata, OpenGraph, fonts |
-| `app/opengraph-image.tsx` | the social card, rendered to PNG at build time |
+| `app/opengraph-image.png` | the social card |
+| `scripts/og-image.tsx` | the generator that produced it — see below |
 | `app/icon.svg` | favicon: a slashed zero |
 | `components/site/` | one component per section |
 | `components/ui/` | shadcn primitives |
+
+## Regenerating the social card
+
+`app/opengraph-image.png` is a committed static file, not a generated route.
+Under `output: "export"` a generated route is written to an *extensionless*
+file, which hosts then serve as `application/octet-stream` — and several social
+crawlers refuse to render that. A static `.png` gets the right content type
+everywhere.
+
+The generator still exists. To rebuild the card after editing the tagline:
+
+```sh
+bun run og
+```
+
+That temporarily restores `scripts/og-image.tsx` into `app/`, builds, copies the
+result to `app/opengraph-image.png`, removes the route, and rebuilds.
 
 ## Design
 
