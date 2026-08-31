@@ -184,6 +184,30 @@
   .font-pixel {
     font-family: var(--font-pixel), ui-monospace, monospace;
   }
+
+  /* `MARCHY`, gradient-filled.
+     
+     Progressive enhancement, because the failure mode of getting this wrong is
+     an invisible wordmark: the base rule is solid accent text, and the gradient
+     is only applied where the browser can actually clip a background to text.
+     Note the `-webkit-` prefix is still required on Safari. */
+  .wordmark-gradient {
+    color: var(--primary);
+  }
+
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .wordmark-gradient {
+      background-image: linear-gradient(
+        to bottom,
+        var(--primary) 0%,
+        var(--primary) 55%,
+        var(--destructive) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 @layer components {
